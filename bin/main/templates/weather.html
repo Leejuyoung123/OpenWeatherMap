@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+      <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title> Blog - Start Bootstrap Theme</title>
+        <style>
+        .weather{
+        display:inline-grid}
+        
+        		.weather h1 {display:inline-block}
+        		.weather h1 >p {display:block;}
+        		span {font-size:50px; display:block;}
+        </style>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+      
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/weather.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"> Bootstrap</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                     Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="post.html">Sample Post</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <div class="site-heading">
+                       	  <h2>오늘의 날씨는 </h2>
+						  <svg xmlns="<http://www.w3.org/2000/svg>" width="150" height="150" fill="currentColor" class="bi bi-cloud-sun" viewBox="0 0 16 16" color="orange">
+						  	<path d="M7 8a3.5 3.5 0 0 1 3.5 3.555.5.5 0 0 0 .624.492A1.503 1.503 0 0 1 13 13.5a1.5 1.5 0 0 1-1.5 1.5H3a2 2 0 1 1 .1-3.998.5.5 0 0 0 .51-.375A3.502 3.502 0 0 1 7 8zm4.473 3a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5h-.027z"/>
+						  	<path d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0v-1zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708l.707-.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708l-.708-.707zm1.734 3.374a2 2 0 1 1 3.296 2.198c.199.281.372.582.516.898a3 3 0 1 0-4.84-3.225c.352.011.696.055 1.028.129zm4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377zM14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
+						 </svg>
+						  <i class="bi bi-cloud-sun">
+						  <span th:text="${weatherVO.name}"></span> . <span th:text="${weatherVO.sys.country}"></span>
+						  <span th:text="${weatherVO.weather[0].description}"> </span>
+						  </i> 
+						  <hr>
+                             <div class="weather">
+                             	  <span th:text="${weatherVO.weather[0].date.dayOfMonth}"></span> 
+                             	  <span th:text="${weatherVO.weather[0].date.month}"></span>
+                              	  <h2> <p th:text="${weatherVO.weather[0].date.dayOfWeek}"></p></h2>
+                              	  
+								  <h1>온도: <p th:text="${weatherVO.main.temp}"></p></h1>
+								  <h1>최고온도: <p th:text="${weatherVO.main.temp_max}"></p></h1>
+								  <h1>최저온도: <p th:text="${weatherVO.main.temp_min}"></p></h1>
+								  <h1>습도: <p th:text="${weatherVO.main.humidity}"></p></h3>
+								  <h1>이미지: <img src="" th:text="${weatherVO.weather[0].icon}".png></h1>
+								  <hr>
+								  <h1>날씨정보: <p th:text="${weatherVO.weather[0].description}"></p></h1>
+                    		<!-- 여ㅑ기서부터  -->
+               				    <script>
+				                   function getLocation() {
+				                	   if (navigator.geolocation) { // GPS를 지원하면
+				                	     navigator.geolocation.getCurrentPosition(function(position) {
+				                	    	 
+				                	    	//  alert('위도:'+position.coords.latitude + ' ' + '경도:'+ position.coords.longitude);
+				                	     }, function(error) {
+				                	       console.error(error);
+				                	     }, {
+				                	       enableHighAccuracy: false,
+				                	       maximumAge: 0,
+				                	       timeout: Infinity
+				                	     });
+				                	   } else {
+				                	     alert('GPS를 지원하지 않습니다');
+				                	   }
+				                	 }
+				                	 getLocation();
+				                	 
+                 			  </script>
+                    			
+                    		
+                    		
+                    		<!-- 여기 까지 -->
+                    		</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Bootstrap core JS-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script th:inline="javascript">
+        	console.log([[${weatherVO}]])
+        </script>
+    </body>
+</html>
