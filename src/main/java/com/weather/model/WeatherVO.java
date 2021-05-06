@@ -1,11 +1,15 @@
 package com.weather.model;
 
+import java.net.URLEncoder;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.client.RestTemplate;
+
+import com.weather.model.WeatherVO.Weather;
 
 import lombok.Data;
 
@@ -13,10 +17,14 @@ import lombok.Data;
 @Data
 @ComponentScan
 public class WeatherVO {
+	  
 	  private List<Weather> weather;
 	  
-	  private final LocalDateTime date;
+	  private Coord coord;
+	  
+	  private LocalDateTime date = LocalDateTime.now(); 
 	  /** �궡遺� 留ㅺ컻 蹂��닔 */
+	  
 	  private String base;
 
 	  private Main main;
@@ -70,7 +78,14 @@ public class WeatherVO {
 		private LocalDate date = LocalDate.now(); 
 		
 	  }
-
+	
+	  @Data
+	  public static class Coord {
+		  private  double lat;
+		  private  double lon;
+	  }
+	  
+	  
 	  @Data
 	  public static class Main {
 
@@ -110,6 +125,7 @@ public class WeatherVO {
 
 	    /**  諛붾엺 �룎�뭾. �떒�쐞 湲곕낯媛� : meter/sec, 誘명꽣踰� : meter/sec, �엫�럹由ъ뼹 : miles/hour */
 	    private float gust;
+	  
 	  }
 
 	  @Data
@@ -159,5 +175,26 @@ public class WeatherVO {
 	  public static class Dt_txt {
 		  private Date dt_txt;
 	  }
-
+	  private final static String BASE_URL = "http://api.openweathermap.org/data/2.5/weather";
+		private final static String apiKey = "382337faac5360f4627378b171bb335c";  
+	  
+		 public static void main(String[] args) {
+		 		StringBuilder urlBuilder = new StringBuilder(BASE_URL);
+				WeatherVO weatherVO = new WeatherVO();
+				 try {	
+					 	urlBuilder.append("?" + URLEncoder.encode("q", "UTF-8") + "=seoul");
+					 //  urlBuilder.append("&" + URLEncoder.encode("lat", "UTF-8") + "=37.566386");
+					  //  urlBuilder.append("&" + URLEncoder.encode("lon", "UTF-8") + "=126.977948");
+					    urlBuilder.append("&" + URLEncoder.encode("appid", "UTF-8") + "=" + apiKey);
+					    urlBuilder.append("&" + URLEncoder.encode("lang", "UTF-8") + "=kr");
+					    urlBuilder.append("&" + URLEncoder.encode("units", "UTF-8") + "=metric");
+					    
+					    RestTemplate restTemplate = new RestTemplate();
+					    weatherVO = restTemplate.getForObject(urlBuilder.toString(), WeatherVO.class);
+					   
+				    }catch (Exception e) {
+				  		e.printStackTrace();
+				  	}
+				 System.out.println("lon"+weatherVO.coord.lon);
+		 }
 }
