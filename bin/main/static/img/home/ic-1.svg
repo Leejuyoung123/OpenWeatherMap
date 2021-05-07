@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_167" data-name="사각형 167" width="28" height="28" transform="translate(7900 -484)" fill="none" stroke="red" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="사각형_78" data-name="사각형 78" width="24" height="24" transform="translate(2786 -1698.132)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_80" data-name="마스크 그룹 80" transform="translate(-7900 484)" clip-path="url(#clip-path)">
+    <g id="마스크_그룹_39" data-name="마스크 그룹 39" transform="translate(5116 1216.132)" clip-path="url(#clip-path-2)">
+      <path id="head" d="M15.3,12.6a5.66,5.66,0,0,0,1.734-4.083V5.678a5.678,5.678,0,1,0-11.357,0V8.517A5.66,5.66,0,0,0,7.412,12.6C3.085,13.273,0,15.021,0,17.056v1.871a2.839,2.839,0,0,0,2.839,2.84H19.873a2.838,2.838,0,0,0,2.839-2.839V17.064C22.713,15.028,19.628,13.276,15.3,12.6ZM7.571,8.517V5.678a3.786,3.786,0,1,1,7.572,0V8.517a3.786,3.786,0,1,1-7.572,0ZM20.82,18.927a.947.947,0,0,1-.946.946H2.839a.948.948,0,0,1-.946-.946V17.056c0-.221.546-.932,2.165-1.612a19.813,19.813,0,0,1,7.3-1.249,19.747,19.747,0,0,1,7.3,1.252c1.621.681,2.167,1.395,2.167,1.616Z" transform="translate(2786.503 -1697.024)" fill="#fff" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

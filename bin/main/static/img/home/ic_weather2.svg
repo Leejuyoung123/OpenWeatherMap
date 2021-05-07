@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_61" data-name="사각형 61" width="80" height="80" transform="translate(2473 173)" fill="none" stroke="red" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_18" data-name="마스크 그룹 18" transform="translate(-2473 -173)" clip-path="url(#clip-path)">
+    <g id="그룹_26" data-name="그룹 26">
+      <path id="패스_138" data-name="패스 138" d="M37.266,24.663a6.8,6.8,0,0,0,.309,1.181c4.242.6,7.425,3.08,7.425,7.489a8.75,8.75,0,0,1-8.75,8.75H13.75A8.751,8.751,0,0,1,12.5,24.671a1.066,1.066,0,0,1,.23-.008,12.5,12.5,0,0,1,24.532,0Z" transform="translate(2472 174.917)" fill="#f3f3f3" fill-rule="evenodd" opacity="0.67"/>
+      <path id="패스_139" data-name="패스 139" d="M56.355,35.107a9.063,9.063,0,0,0,.412,1.575c5.656.807,9.9,4.106,9.9,9.985A11.667,11.667,0,0,1,55,58.333H25a11.667,11.667,0,0,1-1.662-23.216,1.421,1.421,0,0,1,.307-.011,16.671,16.671,0,0,1,32.709,0Z" transform="translate(2484 165.917)" fill="#f3f3f3" fill-rule="evenodd"/>
+      <rect id="사각형_55" data-name="사각형 55" width="2" height="10" rx="1" transform="translate(2504.612 226.187) rotate(34)" fill="#97cfff"/>
+      <rect id="사각형_56" data-name="사각형 56" width="2" height="10" rx="1" transform="translate(2491.612 234.187) rotate(34)" fill="#97cfff"/>
+      <rect id="사각형_54" data-name="사각형 54" width="2" height="10" rx="1" transform="translate(2509.612 234.187) rotate(34)" fill="#97cfff"/>
+      <rect id="사각형_57" data-name="사각형 57" width="2" height="10" rx="1" transform="translate(2527.612 234.187) rotate(34)" fill="#97cfff"/>
+      <rect id="사각형_58" data-name="사각형 58" width="2" height="10" rx="1" transform="translate(2540.612 226.187) rotate(34)" fill="#97cfff"/>
+      <rect id="사각형_53" data-name="사각형 53" width="2" height="10" rx="1" transform="translate(2522.612 226.187) rotate(34)" fill="#97cfff"/>
+    </g>
+  </g>
+</svg>

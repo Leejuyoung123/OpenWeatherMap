@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_168" data-name="사각형 168" width="28" height="28" transform="translate(7900 -526)" fill="none" stroke="red" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="사각형_75" data-name="사각형 75" width="24" height="24" transform="translate(2995 -1801.61)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="마스크_그룹_81" data-name="마스크 그룹 81" transform="translate(-7900 526)" clip-path="url(#clip-path)">
+    <g id="마스크_그룹_36" data-name="마스크 그룹 36" transform="translate(4907 1277.61)" clip-path="url(#clip-path-2)">
+      <path id="mail" d="M20.986,0H3.314A3.314,3.314,0,0,0,0,3.314V16.569a3.314,3.314,0,0,0,3.314,3.314H20.986A3.314,3.314,0,0,0,24.3,16.568V3.314A3.314,3.314,0,0,0,20.986,0Zm0,2.209a1.1,1.1,0,0,1,.365.061l-9.2,7.361L2.95,2.27a1.1,1.1,0,0,1,.363-.061Zm0,15.464H3.314a1.105,1.105,0,0,1-1.1-1.1V4.507l9.251,7.4a1.106,1.106,0,0,0,1.381,0l9.25-7.4V16.569a1.1,1.1,0,0,1-1.105,1.1Z" transform="translate(2995 -1799.608)" fill="#fff" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>

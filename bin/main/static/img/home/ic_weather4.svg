@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_45" data-name="사각형 45" width="80" height="80" transform="translate(2474 -147)" fill="none" stroke="red" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="1" y1="0.834" x2="0.565" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fcb41d"/>
+      <stop offset="1" stop-color="#ffd74d"/>
+    </linearGradient>
+  </defs>
+  <g id="마스크_그룹_20" data-name="마스크 그룹 20" transform="translate(-2474 147)" clip-path="url(#clip-path)">
+    <g id="그룹_22" data-name="그룹 22" transform="translate(-21 94.746)">
+      <path id="패스_135" data-name="패스 135" d="M86.385,37.776A21.942,21.942,0,1,1,64.442,15.833,21.942,21.942,0,0,1,86.385,37.776Z" transform="translate(2471 -239.714)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="27.4" height="38.4" viewBox="0 0 27.4 38.4">
+  <defs>
+    <filter id="_" x="0" y="0" width="27.4" height="38.4" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="그룹_18" data-name="그룹 18" transform="translate(-3032.8 2258.2)">
+    <circle id="타원_1" data-name="타원 1" cx="10.5" cy="10.5" r="10.5" transform="translate(3036 -2252)" fill="#3c5083"/>
+    <path id="합치기_1" data-name="합치기 1" d="M1.006,2.831A.177.177,0,0,1,.872,2.78L.124,2.032a.176.176,0,0,1,.249-.248l.494.494V.176a.176.176,0,1,1,.352,0V2.211l.428-.428a.176.176,0,0,1,.249.248l-.747.748a.176.176,0,0,1-.125.052Z" transform="translate(3039.55 -2239.227)" fill="#fff" opacity="0.65"/>
+    <path id="합치기_2" data-name="합치기 2" d="M1.006,2.831A.177.177,0,0,1,.872,2.78L.124,2.032a.176.176,0,0,1,.249-.248l.494.494V.176a.176.176,0,1,1,.352,0V2.211l.428-.428a.176.176,0,0,1,.249.248l-.747.748a.176.176,0,0,1-.125.052Z" transform="translate(3053.571 -2243.395) rotate(180)" fill="#fff" opacity="0.65"/>
+    <g transform="matrix(1, 0, 0, 1, 3032.8, -2258.2)" filter="url(#_)">
+      <text id="_2" data-name="₭" transform="translate(9.2 22.2)" fill="#fff" stroke="#14295e" stroke-width="0.2" font-size="15" font-family="NotoSans-Bold, Noto Sans" font-weight="700"><tspan x="0" y="0">₭</tspan></text>
+    </g>
+  </g>
+</svg>

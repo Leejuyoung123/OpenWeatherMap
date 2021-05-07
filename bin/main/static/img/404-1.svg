@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="273.596" height="353.607" viewBox="0 0 273.596 353.607">
+  <g id="그룹_11" data-name="그룹 11" transform="translate(-3506.102 1607.607)">
+    <g id="그룹_7" data-name="그룹 7" transform="translate(3506.102 -1607.607)">
+      <path id="패스_23" data-name="패스 23" d="M135.979,0a135.979,135.979,0,0,1,0,271.958c-30.733,0-62.677-10.752-73.123-18.7H22.209s3.156-21.91-1.136-40.874C2.226,175.6,0,153.17,0,135.979A135.979,135.979,0,0,1,135.979,0Z" transform="translate(1.638 8.191)" fill="#2c5290"/>
+      <path id="패스_24" data-name="패스 24" d="M135.979,0a135.979,135.979,0,0,1,0,271.958c-30.733,0-62.677-10.752-73.123-18.7H22.209s3.156-21.91-1.136-40.874C2.226,175.6,0,153.17,0,135.979A135.979,135.979,0,0,1,135.979,0Z" fill="#6189cb"/>
+    </g>
+    <g id="그룹_8" data-name="그룹 8" transform="translate(3551.975 -1522.416)">
+      <text id="_404" data-name="404" transform="translate(5.128 85.958)" fill="#2c5290" font-size="95" font-family="NanumSquareRoundEB, NanumSquareRound"><tspan x="0" y="0">404</tspan></text>
+      <text id="_404-2" data-name="404" transform="translate(0.128 80.958)" fill="#fff" font-size="95" font-family="NanumSquareRoundEB, NanumSquareRound"><tspan x="0" y="0">404</tspan></text>
+    </g>
+    <ellipse id="타원_1" data-name="타원 1" cx="105" cy="4" rx="105" ry="4" transform="translate(3548 -1262)" fill="#f6f6f6"/>
+  </g>
+</svg>

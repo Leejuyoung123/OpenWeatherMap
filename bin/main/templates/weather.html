@@ -65,7 +65,7 @@
 								  <h1>최고온도: <p th:text="${weatherVO.main.temp_max}"></p></h1>
 								  <h1>최저온도: <p th:text="${weatherVO.main.temp_min}"></p></h1>
 								  <h1>습도: <p th:text="${weatherVO.main.humidity}"></p></h3>
-								  <h1>이미지: <img th:src="@{http://openweathermap.org/img/w/} + ${weatherVO.weather[0].icon}+ .png"></h1>
+									<h1>이미지: <img th:src="@{http://openweathermap.org/img/w/} + ${weatherVO.weather[0].icon}+ .png"></h1> 
 								  <hr>
 								  <h1>날씨정보: <p th:text="${weatherVO.weather[0].description}"></p></h1>
                     		<!-- 여ㅑ기서부터  -->
@@ -94,6 +94,11 @@
 			                			 	getLocation();
             				</script>
                     		<!-- 여기 까지 -->
+    
+                    		
+                    		
+                    		
+                    		
                     		</div>
                         </div>
                     </div>
