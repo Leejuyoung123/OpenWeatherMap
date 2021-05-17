@@ -40,6 +40,16 @@
      		   location.replace("/hourlyApi?lat=" + dataLat + "&lon=" + dataLon);
      	   });
      	}
+        
+        function getWeek(){
+        	var dataLat;
+     	    var dataLon;
+     	   	   navigator.geolocation.getCurrentPosition(function(position) {        		   
+     		   dataLat = position.coords.latitude;
+     		   dataLon = position.coords.longitude;
+     		   location.replace("/weekApi?lat=" + dataLat + "&lon=" + dataLon);
+     	   });
+     	}
             
         		   
 /*         		   var json = {
@@ -84,7 +94,7 @@
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="javascript:getWeather();">Today</a></li>
                         <li class="nav-item"><a class="nav-link" href="javascript:getHourly();">Hourly weather</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Weekly weather</a></li>
+                        <li class="nav-item"><a class="nav-link" href="javascript:getWeek();">Weekly weather</a></li>
                     </ul>
                 </div>
             </div>

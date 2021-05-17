@@ -1,24 +1,155 @@
 <!DOCTYPE html>
-<html>
-<!-- header fragment �궗�슜 -->
+<html lang="en">
+<head>
+		<title></title>
+        <meta charset="utf-8" />
+<style>
+body.weather {
+    background-color: #2C5290;
+}
+.weather_wrap {
+    color: white;
+}
+
+/* today-weather */
+.today-weather_wrap > dl {
+    padding: 35px 0;
+    width: 160px;
+    margin: 0 auto;
+    text-align: center;
+}
+.today-weather_wrap > dl dt {
+    font-size: 2.4rem;
+    white-space: nowrap;
+}
+
+.today-weather_wrap > dl dd .weather {
+    font-size: 1.6rem;
+}
+.today-weather_wrap > dl dd .weather_temper {
+    font-size: 4.8rem;
+    position: relative;
+    z-index: 0;
+}
+.today-weather_wrap > dl dd .weather_temper:after {
+    content: "℃";
+    position: absolute;
+    right: -20px;
+    top: 14px;
+    font-size: 1.8rem;
+}
+
+.today-weather_wrap > dl > dd > ul > li > ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.today-weather_wrap > div {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255,255,255,0.4);
+}
+.today-weather_wrap > div ul {
+    width: 77.77%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.today-weather_wrap > div ul li dl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.today-weather_wrap > div ul li dl dt {
+    color: #c8cdd1;
+    font-size: 1.2rem;
+}
+.today-weather_wrap > div ul li dl dd {
+    font-size: 2rem;
+}
+
+/* daily-weather_wrap */
+
+.daily-weather_wrap {
+    width: 88.88%;
+    margin: 30px auto 0;
+}
+.daily-weather_wrap > ul > li > dl {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.daily-weather_wrap > ul > li {
+    margin-bottom: 20px;
+}
+.daily-weather_wrap > ul > li > dl > dt {
+    width: 40%;
+}
+.daily-weather_wrap > ul > li > dl > dd {
+    width: 60%;
+    box-sizing: border-box;
+    padding-left: 10%;
+}
+
+.daily-weather_wrap > ul > li > dl > dt ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.daily-weather_wrap > ul > li > dl > dt ul li:nth-of-type(1) p:nth-of-type(1) {
+    color: #c8cdd1;
+    font-size: 1.2rem;
+    font-family: 'NotoSans-Light';
+}
+.daily-weather_wrap > ul > li > dl > dt ul li:nth-of-type(1) p:nth-of-type(2) {
+    font-size: 1.4rem;
+    font-family: 'NotoSans-Light';
+}
+.daily-weather_wrap > ul > li > dl > dt ul img {
+    width: 35px;
+    height: 35px;
+}
+.daily-weather_wrap > ul > li > dl > dd ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.daily-weather_wrap > ul > li > dl > dd ul li dl {
+    line-height: 1.72;
+}
+.daily-weather_wrap > ul > li > dl > dd ul li dl dt {
+    color: #c8cdd1;
+    font-family: 'NotoSans-Light';
+}
+.daily-weather_wrap > ul > li > dl > dd ul li dl dd {
+    font-size: 1.4rem;
+    font-family: 'NotoSans-Light';
+}
+</style>
+<script th:src="@{/static/js/moment.js}"></script>
+</head>
 <body class="detail_page weather none-footer_wrap">
+    <div>
     <header class="det_page_header">
         <div class="header_inner">
             <a class="back" href="javascript:history.go(-1);"><img src="static/img/back.svg" alt=""></a>
+            <h1 ></h1>
         </div>
     </header>
-
+							
         <div class="weather_wrap">
-            <div class="today-weather_wrap">
+            <div class="today-weather_wrap"> 
                 <dl>
-                    <dt class="tit"><span class="city">Seoul</span>, <span class="country">Korea</span></dt>
+                    <dt class="tit"><span class="city" th:text="${week.timezone}">Seoul</span> <span class="country"></span></dt>
                     <dd class="info">
                         <ul>
-                            <li class="weather">Sunny</li>
+                            <li class="weather" th:text="${week.date.dayOfWeek}"  >Sunny</li>
                             <li>
                                 <ul>
-                                    <li class="weather_img"><img src="static/img/home/ic_weather5.svg" alt=""></li>
-                                    <li class="weather_temper">28</li>
+                                    <li class="weather_img"><img th:src="@{http://openweathermap.org/img/w/} + ${week.current.weather[0].icon}+ .png"/></li>
+                                    <li class="weather_temper" th:text="${week.current.temp}"></li>
                                 </ul>
                             </li>
                         </ul>
@@ -30,276 +161,76 @@
                         <li class="high">
                             <dl>
                                 <dt>High</dt>
-                                <dd>32</dd>
+                                <dd th:text="${week.daily[0].temp.max}">32</dd>
                             </dl>
                         </li>
                         <li class="low">
                             <dl>
                                 <dt>Low</dt>
-                                <dd>22</dd>
+                                <dd th:text="${week.daily[0].temp.min}">22</dd>
                             </dl>
                         </li>
                         <li class="chance">
                             <dl>
                                 <dt>Chance of rain</dt>
-                                <dd>20%</dd>
+                                <dd th:text="${week.daily[0].pop}">20%</dd>
                             </dl>
                         </li>
                     </ul>
                 </div>
             </div>
-            <!-- //today-weather_wrap -->
 
             <div class="daily-weather_wrap">
-                <ul>
+                <ul th:each=" weekely :${week.daily}">
                     <li>
                         <dl>
                             <dt>
                                 <ul>
                                     <li>
-                                        <p><span class="date">27</span> <span class="month">Mar</span></p>
-                                        <p class="day">Sunday</p>
+                                        <p><span class="date" th:text="${#dates.format(weekely.dt *1000 , 'M/dd')}">27</span>
+                                        	
+                                        	 <span class="month" th:text="${#dates.monthName(weekely.dt *1000)}">mar</span>
+                                        	 </p>
+                                             <p class="day" th:text="${#dates.dayOfWeekName(weekely.dt *1000)}">Sunday 
+                                             <!-- <span th:text="${weekely.date.Month}" class="month">mar</span> -->
+                                        	 <!-- </p> -->
+                                             <!-- <p class="day" th:text="${weekely.date.dayOfWeek}">Sunday -->
+                                        </p>
                                     </li>
-                                    <li><img src="static/img/home/ic_weather2.svg" alt=""></li>
+                                    <li><img th:src="@{http://openweathermap.org/img/w/} + ${weekely.weather[0].icon}+ .png"></li>
                                 </ul>
                             </dt>
                             <dd>
                                 <ul>
-                                    <li class="high">
-                                        <dl>
-                                            <dt>High</dt>
-                                            <dd>32</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="low">
-                                        <dl>
-                                            <dt>Low</dt>
-                                            <dd>22</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="chance">
-                                        <dl>
-                                            <dt>Chance of rain</dt>
-                                            <dd>20%</dd>
-                                        </dl>
-                                    </li>
+	                                    <li class="high">
+	                                        <dl>
+	                                            <dt>High</dt>
+	                                            <dd th:text="${weekely.temp.max}">32</dd>
+	                                        </dl>
+	                                    </li>
+	                                    <li class="low">
+	                                        <dl>
+	                                            <dt>Low</dt>
+	                                            <dd th:text="${weekely.temp.min}">22</dd>
+	                                        </dl> 
+	                                    </li>
+	                                    <li class="chance">
+	                                        <dl>
+	                                            <dt>Chance of rain</dt>
+	                                            <dd th:text="${weekely.pop}">20%</dd>
+	                                        </dl>
+	                                    </li>
                                 </ul>
                             </dd>
                         </dl>
                     </li>
-                    <li>
-                        <dl>
-                            <dt>
-                                <ul>
-                                    <li>
-                                        <p><span class="date">27</span> <span class="month">Mar</span></p>
-                                        <p class="day">Sunday</p>
-                                    </li>
-                                    <li><img src="static/img/home/ic_weather1.svg" alt=""></li>
-                                </ul>
-                            </dt>
-                            <dd>
-                                <ul>
-                                    <li class="high">
-                                        <dl>
-                                            <dt>High</dt>
-                                            <dd>32</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="low">
-                                        <dl>
-                                            <dt>Low</dt>
-                                            <dd>22</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="chance">
-                                        <dl>
-                                            <dt>Chance of rain</dt>
-                                            <dd>20%</dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl>
-                            <dt>
-                                <ul>
-                                    <li>
-                                        <p><span class="date">27</span> <span class="month">Mar</span></p>
-                                        <p class="day">Sunday</p>
-                                    </li>
-                                    <li><img src="static/img/home/ic_weather5.svg" alt=""></li>
-                                </ul>
-                            </dt>
-                            <dd>
-                                <ul>
-                                    <li class="high">
-                                        <dl>
-                                            <dt>High</dt>
-                                            <dd>32</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="low">
-                                        <dl>
-                                            <dt>Low</dt>
-                                            <dd>22</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="chance">
-                                        <dl>
-                                            <dt>Chance of rain</dt>
-                                            <dd>20%</dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl>
-                            <dt>
-                                <ul>
-                                    <li>
-                                        <p><span class="date">27</span> <span class="month">Mar</span></p>
-                                        <p class="day">Sunday</p>
-                                    </li>
-                                    <li><img src="static/img/home/ic_weather5.svg" alt=""></li>
-                                </ul>
-                            </dt>
-                            <dd>
-                                <ul>
-                                    <li class="high">
-                                        <dl>
-                                            <dt>High</dt>
-                                            <dd>32</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="low">
-                                        <dl>
-                                            <dt>Low</dt>
-                                            <dd>22</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="chance">
-                                        <dl>
-                                            <dt>Chance of rain</dt>
-                                            <dd>20%</dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl>
-                            <dt>
-                                <ul>
-                                    <li>
-                                        <p><span class="date">27</span> <span class="month">Mar</span></p>
-                                        <p class="day">Sunday</p>
-                                    </li>
-                                    <li><img src="static/img/home/ic_weather4.svg" alt=""></li>
-                                </ul>
-                            </dt>
-                            <dd>
-                                <ul>
-                                    <li class="high">
-                                        <dl>
-                                            <dt>High</dt>
-                                            <dd>32</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="low">
-                                        <dl>
-                                            <dt>Low</dt>
-                                            <dd>22</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="chance">
-                                        <dl>
-                                            <dt>Chance of rain</dt>
-                                            <dd>20%</dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl>
-                            <dt>
-                                <ul>
-                                    <li>
-                                        <p><span class="date">27</span> <span class="month">Mar</span></p>
-                                        <p class="day">Sunday</p>
-                                    </li>
-                                    <li><img src="static/img/home/ic_weather2.svg" alt=""></li>
-                                </ul>
-                            </dt>
-                            <dd>
-                                <ul>
-                                    <li class="high">
-                                        <dl>
-                                            <dt>High</dt>
-                                            <dd>32</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="low">
-                                        <dl>
-                                            <dt>Low</dt>
-                                            <dd>22</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="chance">
-                                        <dl>
-                                            <dt>Chance of rain</dt>
-                                            <dd>20%</dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <dl>
-                            <dt>
-                                <ul>
-                                    <li>
-                                        <p><span class="date">27</span> <span class="month">Mar</span></p>
-                                        <p class="day">Sunday</p>
-                                    </li>
-                                    <li><img src="static/img/home/ic_weather4.svg" alt=""></li>
-                                </ul>
-                            </dt>
-                            <dd>
-                                <ul>
-                                    <li class="high">
-                                        <dl>
-                                            <dt>High</dt>
-                                            <dd>32</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="low">
-                                        <dl>
-                                            <dt>Low</dt>
-                                            <dd>22</dd>
-                                        </dl>
-                                    </li>
-                                    <li class="chance">
-                                        <dl>
-                                            <dt>Chance of rain</dt>
-                                            <dd>20%</dd>
-                                        </dl>
-                                    </li>
-                                </ul>
-                            </dd>
-                        </dl>
-                    </li>
-                </ul>
+                </ul> 
             </div>
-            <!-- //daily-weather_wrap -->
         </div>
+          <script th:inline="javascript">
+        	console.log([[${week}]])
+        </script>
+        
+        
 </body>
 </html>

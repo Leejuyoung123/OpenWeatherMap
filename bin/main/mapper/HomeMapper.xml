@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.weather.mapper.HomeMapper">
+   
+    <resultMap id="main" type="com.weather.model.MainVO">
+			<result property="temp" column="temp" />
+			<result property="temp_min" column="temp_min" />
+			<result property="temp_max" column="temp_max" />
+			<result property="humidity" column="humidity" />
+	</resultMap>
+
+	<resultMap id="sys" type="com.weather.model.Sys">
+			<result property="country" column="country" />
+	</resultMap>
+	
+	<resultMap id="weather" type="com.weather.model.Weather">
+			<result property="description" column="description" />
+			<result property="icon" column="icon" />
+	</resultMap> 
+	
+	<resultMap id="weatherVO2" type="com.weather.model.WeatherVO2">
+			<collection property="main" resultMap="main" />
+			<collection property="sys" resultMap="sys" />
+			<collection property="weather" resultMap="weather" />
+	</resultMap>
+	
+	
+	
+	
+	
+	<insert id="insertWeather">
+		insert into weather(name,temp,temp_min,temp_max,humidity,country,description,icon) 
+		values (#{name},#{main.temp},#{main.temp_min},#{main.temp_max},#{main.humidity},#{sys.country},#{weather[0].description},#{weather[0].icon}) 
+	</insert>
+	 
+	<!-- <select id="gweatherList" resultType="WeatherVO">
+   				select * from weather
+    </select> -->
+    
+    <select id="testRow"  resultMap="weatherVO2">
+    		select name,temp,temp_min,temp_max,humidity,country,description,icon
+		from weather
+		
+    </select>
+
+</mapper>

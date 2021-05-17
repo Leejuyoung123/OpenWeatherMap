@@ -52,24 +52,24 @@
                     <div class="col-lg-8 col-md-10 mx-auto">
                         <div class="site-heading">
                        	  <h2>오늘의 날씨는 </h2>
-						   <img th:src="@{http://openweathermap.org/img/w/} + ${weatherVO.weather[0].icon}+ .png">
+					 	   <img th:src="@{http://openweathermap.org/img/w/} + ${weatherVO.weather[0].icon}+ .png"> 
 						  <span th:text="${weatherVO.name}"></span> . <span th:text="${weatherVO.sys.country}"></span>
-						  <span th:text="${weatherVO.weather[0].description}"> </span>
+						   	<span th:text="${weatherVO.weather[0].description}"> </span> 
 						  <hr>
                              <div class="weather">
-                             	  <span th:text="${weatherVO.weather[0].date.dayOfMonth}"></span> 
+                             	  <!-- <span th:text="${weatherVO.weather[0].date.dayOfMonth}"></span> 
                              	  <span th:text="${weatherVO.weather[0].date.month}"></span>
                               	  <h2> <p th:text="${weatherVO.weather[0].date.dayOfWeek}"></p></h2>
-                              	  
+                              	   -->
 								  <h1>온도: <p th:text="${weatherVO.main.temp}"></p></h1>
 								  <h1>최고온도: <p th:text="${weatherVO.main.temp_max}"></p></h1>
 								  <h1>최저온도: <p th:text="${weatherVO.main.temp_min}"></p></h1>
 								  <h1>습도: <p th:text="${weatherVO.main.humidity}"></p></h3>
-									<h1>이미지: <img th:src="@{http://openweathermap.org/img/w/} + ${weatherVO.weather[0].icon}+ .png"></h1> 
+									 <h1>이미지: <img th:src="@{http://openweathermap.org/img/w/} + ${weatherVO.weather[0].icon}+ .png"></h1>  
 								  <hr>
-								  <h1>날씨정보: <p th:text="${weatherVO.weather[0].description}"></p></h1>
+								   <h1>날씨정보: <p th:text="${weatherVO.weather[0].description}"></p></h1> 
                     		<!-- 여ㅑ기서부터  -->
-              				 <script "javascript">
+              				 <script>
 			              				function getLocation() {
 						                	   if (navigator.geolocation) { 
 						                		 // GPS를 지원하면
@@ -97,8 +97,6 @@
     
                     		
                     		
-                    		
-                    		
                     		</div>
                         </div>
                     </div>
@@ -111,7 +109,6 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <script th:inline="javascript">
-        	console.log([[${weatherVO}]])
         </script>
         
     </body>

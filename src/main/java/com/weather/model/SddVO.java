@@ -1,7 +1,9 @@
 package com.weather.model;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import lombok.Data;
+
 @Data
 public class SddVO {
 	/** 요청된 위치의 시간대 이름 */
@@ -19,11 +21,16 @@ public class SddVO {
 	/** 일일 예보 날씨 데이터 API 응답 */
 	private List<Daily> daily;
 	
+	private LocalDateTime date = LocalDateTime.now(); 
+	
+	
+
+	
 @Data
 public class Current {
 	/** 현재시간 Unix, UTC */
 	private long dt;
-	
+
 	/** 일출시간 Unix, UTC */
 	private long sunrise;
 	
@@ -70,8 +77,7 @@ public class Minutely{
 	private long dt;
 	
 	/** 강수량, mm */
-	private long precipitation;
-	
+	/* private long precipitation; */
 }
 
 @Data
@@ -80,8 +86,8 @@ public class Hourly{
 	/** 예측 데이터 시간, Unix, UTC */
 	private long dt;
 	
-	/** 온도. 단위 – 기본값 : 켈빈, 미터법 : 섭씨, 영국식 : 화씨 */
 	private double temp;
+	/** 온도. 단위 – 기본값 : 켈빈, 미터법 : 섭씨, 영국식 : 화씨 */
 	
 	/** 온도. 단위 – 기본값 : 켈빈, 미터법 : 섭씨, 영국식 : 화씨 */
 	private double feels_like;
@@ -89,11 +95,14 @@ public class Hourly{
 	/** 습도 % */
 	private double humidity;
 	
+	
 	/** 일출시간 Unix, UTC */
 	private List<Weather> weather;
 	
+	private LocalDateTime date = LocalDateTime.now(); 
 	/** 강수 확률 */
 	private double pop;
+	
 
 	@Data
 	public class Weather{
@@ -106,13 +115,17 @@ public class Hourly{
 }
 @Data
 public class Daily{
+	
 	private long dt;
 	private long sunrise;
 	private long sunset;
 	private Temp temp;
 	private double humdity;
+	
 	private List<Weather> weather;
 	private int clouds;
+	
+	
 	
 	/** 강수 확률 */
 	private double pop;
