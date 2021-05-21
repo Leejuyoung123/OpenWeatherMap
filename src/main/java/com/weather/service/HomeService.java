@@ -20,5 +20,5 @@ public interface HomeService {
 
 	public WeatherVO2 getUrlweather(String lat, String lon);
 	
-	
+	// 재수정
 }
